@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.18.3](https://github.com/kaidokert/atsamd/compare/feather_m0-0.18.2...feather_m0-0.18.3) - 2025-04-21
+
+### Other
+
+- Temperature reading demo
+
 ## [0.18.2](https://github.com/atsamd-rs/atsamd/compare/feather_m0-0.18.1...feather_m0-0.18.2) - 2025-04-12
 
 ### Other
