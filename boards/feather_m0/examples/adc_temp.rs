@@ -57,10 +57,14 @@ fn main() -> ! {
     );
     let mut delay = hal::delay::Delay::new(core.SYST, &mut clocks);
     let mut adc = Adc::adc(peripherals.adc, &mut peripherals.pm, &mut clocks);
-    let mut channel = TempChannel;
+    let mut temp_channel = TempChannel;
+    let mut scaled_iovcc_channel = ScaledIOVccChannel;
+    let mut scaled_corevcc_channel = ScaledCoreVccChannel;
     loop {
-        let data: u16 = adc.read(&mut channel).unwrap();
-        hprintln!("{}", data).ok();
-        delay.delay_ms(1000u16);
+        let temp: u16 = adc.read(&mut temp_channel).unwrap();
+        let iovcc : u16 = adc.read(&mut scaled_iovcc_channel).unwrap();
+        let corevcc : u16 = adc.read(&mut scaled_corevcc_channel).unwrap();
+        hprintln!("temp: {} iovcc:{} corevcc:{}", temp, iovcc, corevcc).ok();
+        delay.delay_ms(100u16);
     }
 }
