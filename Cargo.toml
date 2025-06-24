@@ -27,3 +27,6 @@ lto = "thin"
 lto = true
 opt-level = "s"
 debug = true
+
+[patch.crates-io]
+usb-device = { git = "https://github.com/kaidokert/usb-device", rev = "v0.4.0-enumerate-patch" }

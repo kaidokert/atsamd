@@ -22,8 +22,11 @@ use hal::prelude::*;
 use hal::usb::UsbBus;
 use pac::{interrupt, CorePeripherals, Peripherals};
 
+
 #[entry]
 fn main() -> ! {
+    static mut STORAGE_BUFFER: [u8; 2048] = [0u8; 2048];
+
     let mut peripherals = Peripherals::take().unwrap();
     let mut core = CorePeripherals::take().unwrap();
     let mut clocks = GenericClockController::with_internal_32kosc(
@@ -49,14 +52,14 @@ fn main() -> ! {
     unsafe {
         USB_SERIAL = Some(SerialPort::new(bus_allocator));
         USB_BUS = Some(
-            UsbDeviceBuilder::new(bus_allocator, UsbVidPid(0x16c0, 0x27dd))
+            UsbDeviceBuilder::new(bus_allocator, UsbVidPid(0x16c0, 0x27dd), STORAGE_BUFFER)
                 .strings(&[StringDescriptors::new(LangID::EN)
                     .manufacturer("Fake company")
-                    .product("Serial port")
-                    .serial_number("TEST")])
+                    .product("Serial port RUST")
+                    .serial_number("TEST 12345")])
                 .expect("Failed to set strings")
                 .device_class(USB_CLASS_CDC)
-                .build(),
+                .build().expect("Failed to build USB device"),
         );
     }
 
@@ -89,7 +92,13 @@ fn poll_usb() {
                         if i >= count {
                             break;
                         }
-                        serial.write(&[*c]).ok();
+                        // conver to upper case
+                        let c = if *c >= b'a' && *c <= b'z' {
+                            c - 32
+                        } else {
+                            *c
+                        };
+                        serial.write(&[c]).ok();
                     }
                 };
             };
