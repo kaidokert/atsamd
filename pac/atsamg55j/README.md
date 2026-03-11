@@ -1,6 +1,6 @@
 # ATSAMG55J
 
-A peripheral access crate for the ATSAMG55J chip from Microchip (nee Atmel) for Rust Embedded projects.
+A peripheral access crate for the ATSAMG55J chip from Microchip (née Atmel) for Rust Embedded projects.
 
 ## [Documentation](https://docs.rs/atsamg55j/)
 
