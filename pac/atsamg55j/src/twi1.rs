@@ -1,0 +1,335 @@
+#[repr(C)]
+#[doc = "Register block"]
+pub struct RegisterBlock {
+    cr: Cr,
+    mmr: Mmr,
+    smr: Smr,
+    iadr: Iadr,
+    cwgr: Cwgr,
+    _reserved5: [u8; 0x0c],
+    sr: Sr,
+    ier: Ier,
+    idr: Idr,
+    imr: Imr,
+    rhr: Rhr,
+    thr: Thr,
+    smbtr: Smbtr,
+    _reserved12: [u8; 0x04],
+    acr: Acr,
+    filtr: Filtr,
+    _reserved14: [u8; 0x04],
+    swmr: Swmr,
+    _reserved15: [u8; 0x94],
+    wpmr: Wpmr,
+    wpsr: Wpsr,
+    _reserved17: [u8; 0x14],
+    rpr: Rpr,
+    rcr: Rcr,
+    tpr: Tpr,
+    tcr: Tcr,
+    rnpr: Rnpr,
+    rncr: Rncr,
+    tnpr: Tnpr,
+    tncr: Tncr,
+    ptcr: Ptcr,
+    ptsr: Ptsr,
+}
+impl RegisterBlock {
+    #[doc = "0x00 - TWI Control Register"]
+    #[inline(always)]
+    pub const fn cr(&self) -> &Cr {
+        &self.cr
+    }
+    #[doc = "0x04 - TWI Master Mode Register"]
+    #[inline(always)]
+    pub const fn mmr(&self) -> &Mmr {
+        &self.mmr
+    }
+    #[doc = "0x08 - TWI Slave Mode Register"]
+    #[inline(always)]
+    pub const fn smr(&self) -> &Smr {
+        &self.smr
+    }
+    #[doc = "0x0c - TWI Internal Address Register"]
+    #[inline(always)]
+    pub const fn iadr(&self) -> &Iadr {
+        &self.iadr
+    }
+    #[doc = "0x10 - TWI Clock Waveform Generator Register"]
+    #[inline(always)]
+    pub const fn cwgr(&self) -> &Cwgr {
+        &self.cwgr
+    }
+    #[doc = "0x20 - TWI Status Register"]
+    #[inline(always)]
+    pub const fn sr(&self) -> &Sr {
+        &self.sr
+    }
+    #[doc = "0x24 - TWI Interrupt Enable Register"]
+    #[inline(always)]
+    pub const fn ier(&self) -> &Ier {
+        &self.ier
+    }
+    #[doc = "0x28 - TWI Interrupt Disable Register"]
+    #[inline(always)]
+    pub const fn idr(&self) -> &Idr {
+        &self.idr
+    }
+    #[doc = "0x2c - TWI Interrupt Mask Register"]
+    #[inline(always)]
+    pub const fn imr(&self) -> &Imr {
+        &self.imr
+    }
+    #[doc = "0x30 - TWI Receive Holding Register"]
+    #[inline(always)]
+    pub const fn rhr(&self) -> &Rhr {
+        &self.rhr
+    }
+    #[doc = "0x34 - TWI Transmit Holding Register"]
+    #[inline(always)]
+    pub const fn thr(&self) -> &Thr {
+        &self.thr
+    }
+    #[doc = "0x38 - TWI SMBus Timing Register"]
+    #[inline(always)]
+    pub const fn smbtr(&self) -> &Smbtr {
+        &self.smbtr
+    }
+    #[doc = "0x40 - TWI Alternative Command Register"]
+    #[inline(always)]
+    pub const fn acr(&self) -> &Acr {
+        &self.acr
+    }
+    #[doc = "0x44 - TWI Filter Register"]
+    #[inline(always)]
+    pub const fn filtr(&self) -> &Filtr {
+        &self.filtr
+    }
+    #[doc = "0x4c - TWI SleepWalking Matching Register"]
+    #[inline(always)]
+    pub const fn swmr(&self) -> &Swmr {
+        &self.swmr
+    }
+    #[doc = "0xe4 - TWI Write Protection Mode Register"]
+    #[inline(always)]
+    pub const fn wpmr(&self) -> &Wpmr {
+        &self.wpmr
+    }
+    #[doc = "0xe8 - TWI Write Protection Status Register"]
+    #[inline(always)]
+    pub const fn wpsr(&self) -> &Wpsr {
+        &self.wpsr
+    }
+    #[doc = "0x100 - Receive Pointer Register"]
+    #[inline(always)]
+    pub const fn rpr(&self) -> &Rpr {
+        &self.rpr
+    }
+    #[doc = "0x104 - Receive Counter Register"]
+    #[inline(always)]
+    pub const fn rcr(&self) -> &Rcr {
+        &self.rcr
+    }
+    #[doc = "0x108 - Transmit Pointer Register"]
+    #[inline(always)]
+    pub const fn tpr(&self) -> &Tpr {
+        &self.tpr
+    }
+    #[doc = "0x10c - Transmit Counter Register"]
+    #[inline(always)]
+    pub const fn tcr(&self) -> &Tcr {
+        &self.tcr
+    }
+    #[doc = "0x110 - Receive Next Pointer Register"]
+    #[inline(always)]
+    pub const fn rnpr(&self) -> &Rnpr {
+        &self.rnpr
+    }
+    #[doc = "0x114 - Receive Next Counter Register"]
+    #[inline(always)]
+    pub const fn rncr(&self) -> &Rncr {
+        &self.rncr
+    }
+    #[doc = "0x118 - Transmit Next Pointer Register"]
+    #[inline(always)]
+    pub const fn tnpr(&self) -> &Tnpr {
+        &self.tnpr
+    }
+    #[doc = "0x11c - Transmit Next Counter Register"]
+    #[inline(always)]
+    pub const fn tncr(&self) -> &Tncr {
+        &self.tncr
+    }
+    #[doc = "0x120 - Transfer Control Register"]
+    #[inline(always)]
+    pub const fn ptcr(&self) -> &Ptcr {
+        &self.ptcr
+    }
+    #[doc = "0x124 - Transfer Status Register"]
+    #[inline(always)]
+    pub const fn ptsr(&self) -> &Ptsr {
+        &self.ptsr
+    }
+}
+#[doc = "CR (w) register accessor: TWI Control Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cr`]
+module"]
+#[doc(alias = "CR")]
+pub type Cr = crate::Reg<cr::CrSpec>;
+#[doc = "TWI Control Register"]
+pub mod cr;
+#[doc = "MMR (rw) register accessor: TWI Master Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`mmr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`mmr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@mmr`]
+module"]
+#[doc(alias = "MMR")]
+pub type Mmr = crate::Reg<mmr::MmrSpec>;
+#[doc = "TWI Master Mode Register"]
+pub mod mmr;
+#[doc = "SMR (rw) register accessor: TWI Slave Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`smr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`smr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@smr`]
+module"]
+#[doc(alias = "SMR")]
+pub type Smr = crate::Reg<smr::SmrSpec>;
+#[doc = "TWI Slave Mode Register"]
+pub mod smr;
+#[doc = "IADR (rw) register accessor: TWI Internal Address Register\n\nYou can [`read`](crate::Reg::read) this register and get [`iadr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`iadr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@iadr`]
+module"]
+#[doc(alias = "IADR")]
+pub type Iadr = crate::Reg<iadr::IadrSpec>;
+#[doc = "TWI Internal Address Register"]
+pub mod iadr;
+#[doc = "CWGR (rw) register accessor: TWI Clock Waveform Generator Register\n\nYou can [`read`](crate::Reg::read) this register and get [`cwgr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cwgr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@cwgr`]
+module"]
+#[doc(alias = "CWGR")]
+pub type Cwgr = crate::Reg<cwgr::CwgrSpec>;
+#[doc = "TWI Clock Waveform Generator Register"]
+pub mod cwgr;
+#[doc = "SR (r) register accessor: TWI Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`sr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@sr`]
+module"]
+#[doc(alias = "SR")]
+pub type Sr = crate::Reg<sr::SrSpec>;
+#[doc = "TWI Status Register"]
+pub mod sr;
+#[doc = "IER (w) register accessor: TWI Interrupt Enable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ier::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ier`]
+module"]
+#[doc(alias = "IER")]
+pub type Ier = crate::Reg<ier::IerSpec>;
+#[doc = "TWI Interrupt Enable Register"]
+pub mod ier;
+#[doc = "IDR (w) register accessor: TWI Interrupt Disable Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`idr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@idr`]
+module"]
+#[doc(alias = "IDR")]
+pub type Idr = crate::Reg<idr::IdrSpec>;
+#[doc = "TWI Interrupt Disable Register"]
+pub mod idr;
+#[doc = "IMR (r) register accessor: TWI Interrupt Mask Register\n\nYou can [`read`](crate::Reg::read) this register and get [`imr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@imr`]
+module"]
+#[doc(alias = "IMR")]
+pub type Imr = crate::Reg<imr::ImrSpec>;
+#[doc = "TWI Interrupt Mask Register"]
+pub mod imr;
+#[doc = "RHR (r) register accessor: TWI Receive Holding Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rhr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rhr`]
+module"]
+#[doc(alias = "RHR")]
+pub type Rhr = crate::Reg<rhr::RhrSpec>;
+#[doc = "TWI Receive Holding Register"]
+pub mod rhr;
+#[doc = "THR (w) register accessor: TWI Transmit Holding Register\n\nYou can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`thr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@thr`]
+module"]
+#[doc(alias = "THR")]
+pub type Thr = crate::Reg<thr::ThrSpec>;
+#[doc = "TWI Transmit Holding Register"]
+pub mod thr;
+#[doc = "SMBTR (rw) register accessor: TWI SMBus Timing Register\n\nYou can [`read`](crate::Reg::read) this register and get [`smbtr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`smbtr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@smbtr`]
+module"]
+#[doc(alias = "SMBTR")]
+pub type Smbtr = crate::Reg<smbtr::SmbtrSpec>;
+#[doc = "TWI SMBus Timing Register"]
+pub mod smbtr;
+#[doc = "ACR (rw) register accessor: TWI Alternative Command Register\n\nYou can [`read`](crate::Reg::read) this register and get [`acr::R`]. You can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`acr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@acr`]
+module"]
+#[doc(alias = "ACR")]
+pub type Acr = crate::Reg<acr::AcrSpec>;
+#[doc = "TWI Alternative Command Register"]
+pub mod acr;
+#[doc = "FILTR (rw) register accessor: TWI Filter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`filtr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`filtr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@filtr`]
+module"]
+#[doc(alias = "FILTR")]
+pub type Filtr = crate::Reg<filtr::FiltrSpec>;
+#[doc = "TWI Filter Register"]
+pub mod filtr;
+#[doc = "SWMR (rw) register accessor: TWI SleepWalking Matching Register\n\nYou can [`read`](crate::Reg::read) this register and get [`swmr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`swmr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@swmr`]
+module"]
+#[doc(alias = "SWMR")]
+pub type Swmr = crate::Reg<swmr::SwmrSpec>;
+#[doc = "TWI SleepWalking Matching Register"]
+pub mod swmr;
+#[doc = "WPMR (rw) register accessor: TWI Write Protection Mode Register\n\nYou can [`read`](crate::Reg::read) this register and get [`wpmr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wpmr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wpmr`]
+module"]
+#[doc(alias = "WPMR")]
+pub type Wpmr = crate::Reg<wpmr::WpmrSpec>;
+#[doc = "TWI Write Protection Mode Register"]
+pub mod wpmr;
+#[doc = "WPSR (r) register accessor: TWI Write Protection Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`wpsr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@wpsr`]
+module"]
+#[doc(alias = "WPSR")]
+pub type Wpsr = crate::Reg<wpsr::WpsrSpec>;
+#[doc = "TWI Write Protection Status Register"]
+pub mod wpsr;
+#[doc = "RPR (rw) register accessor: Receive Pointer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rpr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rpr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rpr`]
+module"]
+#[doc(alias = "RPR")]
+pub type Rpr = crate::Reg<rpr::RprSpec>;
+#[doc = "Receive Pointer Register"]
+pub mod rpr;
+#[doc = "RCR (rw) register accessor: Receive Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rcr`]
+module"]
+#[doc(alias = "RCR")]
+pub type Rcr = crate::Reg<rcr::RcrSpec>;
+#[doc = "Receive Counter Register"]
+pub mod rcr;
+#[doc = "TPR (rw) register accessor: Transmit Pointer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tpr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tpr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tpr`]
+module"]
+#[doc(alias = "TPR")]
+pub type Tpr = crate::Reg<tpr::TprSpec>;
+#[doc = "Transmit Pointer Register"]
+pub mod tpr;
+#[doc = "TCR (rw) register accessor: Transmit Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tcr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tcr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tcr`]
+module"]
+#[doc(alias = "TCR")]
+pub type Tcr = crate::Reg<tcr::TcrSpec>;
+#[doc = "Transmit Counter Register"]
+pub mod tcr;
+#[doc = "RNPR (rw) register accessor: Receive Next Pointer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rnpr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rnpr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rnpr`]
+module"]
+#[doc(alias = "RNPR")]
+pub type Rnpr = crate::Reg<rnpr::RnprSpec>;
+#[doc = "Receive Next Pointer Register"]
+pub mod rnpr;
+#[doc = "RNCR (rw) register accessor: Receive Next Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`rncr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`rncr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@rncr`]
+module"]
+#[doc(alias = "RNCR")]
+pub type Rncr = crate::Reg<rncr::RncrSpec>;
+#[doc = "Receive Next Counter Register"]
+pub mod rncr;
+#[doc = "TNPR (rw) register accessor: Transmit Next Pointer Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tnpr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tnpr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tnpr`]
+module"]
+#[doc(alias = "TNPR")]
+pub type Tnpr = crate::Reg<tnpr::TnprSpec>;
+#[doc = "Transmit Next Pointer Register"]
+pub mod tnpr;
+#[doc = "TNCR (rw) register accessor: Transmit Next Counter Register\n\nYou can [`read`](crate::Reg::read) this register and get [`tncr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`tncr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@tncr`]
+module"]
+#[doc(alias = "TNCR")]
+pub type Tncr = crate::Reg<tncr::TncrSpec>;
+#[doc = "Transmit Next Counter Register"]
+pub mod tncr;
+#[doc = "PTCR (w) register accessor: Transfer Control Register\n\nYou can [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ptcr::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ptcr`]
+module"]
+#[doc(alias = "PTCR")]
+pub type Ptcr = crate::Reg<ptcr::PtcrSpec>;
+#[doc = "Transfer Control Register"]
+pub mod ptcr;
+#[doc = "PTSR (r) register accessor: Transfer Status Register\n\nYou can [`read`](crate::Reg::read) this register and get [`ptsr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [`mod@ptsr`]
+module"]
+#[doc(alias = "PTSR")]
+pub type Ptsr = crate::Reg<ptsr::PtsrSpec>;
+#[doc = "Transfer Status Register"]
+pub mod ptsr;
