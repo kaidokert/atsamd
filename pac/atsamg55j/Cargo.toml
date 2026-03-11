@@ -1,0 +1,23 @@
+[package]
+name = "atsamg55j"
+description = "Peripheral access API for ATSAMG55J microcontrollers (generated using svd2rust)"
+version = "0.14.2"
+authors = ["Wez Furlong <wez@wezfurlong.org>", "Paul Sajna <sajattack@gmail.com>"]
+keywords = ["no-std", "arm", "cortex-m"]
+categories = ["embedded", "hardware-support", "no-std"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/atsamd-rs/atsamd"
+readme = "README.md"
+edition = "2021"
+
+[dependencies]
+cortex-m = "0.7"
+vcell = "0.1"
+critical-section = "1.1"
+
+[dependencies.cortex-m-rt]
+version = "0.7"
+optional = true
+
+[features]
+rt = ["cortex-m-rt/device"]
