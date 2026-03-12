@@ -102,6 +102,7 @@ atsame53n = {version = "0.14.2", path = "../pac/atsame53n", optional = true}
 
 atsame54n = {version = "0.14.2", path = "../pac/atsame54n", optional = true}
 atsame54p = {version = "0.14.2", path = "../pac/atsame54p", optional = true}
+atsamg55j = {version = "0.14.2", path = "../pac/atsamg55j", optional = true}
 
 #===============================================================================
 # Features
@@ -143,6 +144,7 @@ same53n = ["device", "dep:atsame53n"]
 
 same54n = ["device", "dep:atsame54n"]
 same54p = ["device", "dep:atsame54p"]
+samg55 = ["dep:atsamg55j"]
 
 #-------------------------------------------------------------------------------
 # RT features
@@ -175,6 +177,7 @@ same53n-rt = ["same53n", "atsame53n/rt"]
 
 same54n-rt = ["same54n", "atsame54n/rt"]
 same54p-rt = ["same54p", "atsame54p/rt"]
+samg55-rt = ["samg55", "atsamg55j/rt"]
 
 #-------------------------------------------------------------------------------
 # User-selectable features

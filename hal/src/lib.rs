@@ -47,7 +47,8 @@ define_pac!(
     (atsame53j, "same53j"),
     (atsame53n, "same53n"),
     (atsame54n, "same54n"),
-    (atsame54p, "same54p")
+    (atsame54p, "same54p"),
+    (atsamg55j, "samg55")
 );
 
 #[cfg(feature = "use_rtt")]
@@ -78,6 +79,8 @@ pub mod async_hal;
 pub mod delay;
 #[cfg(feature = "device")]
 pub mod gpio;
+#[cfg(feature = "samg55")]
+pub mod samg55_gpio;
 #[cfg(feature = "device")]
 pub mod interrupt;
 #[cfg(feature = "device")]
